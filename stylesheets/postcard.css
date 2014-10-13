@@ -1,0 +1,258 @@
+article.postcard textarea,
+article.postcard input[type=text],
+article.postcard input[type=email],
+article.postcard input[type=range] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+article.postcard input[type=text],
+article.postcard input[type=email] {
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 10px;
+}
+
+.postcard {
+  width: 1200px;
+  height: 640px;
+  margin: auto;
+}
+
+.unlocked.postcard .Base58.encoded.encrypted.input,
+.unlocked.postcard button.unlock,
+.locked.postcard .UTF8.encoded.decrypted.text,
+.locked.postcard button.lock {
+  display: none;
+}
+
+.unlocked.postcard .UTF8.decrypted.text,
+.locked.postcard .Base58.encoded.encrypted.input {
+  display: block;
+}
+
+.postcard .Base58.encoded.input label { display: none; }
+.postcard .Base58.encoded.input.unacceptable:not(.undefined) label.unacceptable,
+.postcard .Base58.encoded.input.acceptable label.acceptable,
+.postcard .Base58.encoded.input.undefined label.undefined {
+  display:block;
+}
+
+.postcard .encrypted.file.input {
+  bottom: 40px;
+  left: 40px;
+}
+
+.postcard > header {
+  position: absolute;
+  left: 50%;
+  right: 100px;
+  top: 20px;
+  padding: 20px;
+}
+
+.postcard > b.line {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  border-left: 1px solid transparent;
+}
+
+.postcard > div { position: absolute; }
+
+.postcard > .text {
+  top: 0; bottom: 0; left: 0; right: 50%;
+}
+
+.postcard > .hue {
+  bottom: 30px; left: 0; right: 50%;
+  margin: 0 40px;
+}
+
+.postcard > .east {
+  left: 50%;
+  right: 0;
+  bottom: 40px;
+  margin: 0px 100px 0 100px;
+}
+
+.postcard > .encoded.input label,
+.postcard > .decrypted.text label {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.postcard > .encoded.decrypted.text div,
+.postcard > .encoded.encrypted.input textarea,
+.postcard > .decrypted.text textarea {
+  width: 100%;
+  height: 100%;
+  padding: 80px 40px 0px;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  box-sizing: border-box;
+}
+
+.postcard .encoded.encrypted.input {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 50%;
+}
+.postcard .Base58.encoded.encrypted.input textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  background: none;
+  outline: none;
+}
+
+
+
+
+
+
+
+
+.postcard .miniLockID {
+  margin-bottom: 5px;
+}
+/*.postcard .identity .miniLockID {
+  border: 1px dotted hsla(0, 0%, 0%, 0.15);
+  padding: 9px;
+}*/
+.postcard .identity .key h2,
+.postcard .postie .key h2,
+.postcard .author .key h2 {
+  top: 0px;
+}
+.postcard .identity .key,
+.postcard .postie .key,
+.postcard .author .key {
+  /*outline: 1px solid red;*/
+  /*border: 1px solid hsla(0, 0%, 0%, 0.33);*/
+  margin-top: 0px;
+  margin-right: -60px;
+  padding: 0px 0;
+}
+
+
+
+
+
+
+.postcard .make_keys_view header {
+  padding: 0px 10px;
+}
+
+.postcard div.miniLockID {
+  margin-top: 5px;
+  margin-right: -50px;
+}
+
+.postcard a.stamp {
+  position: absolute;
+  display: block;
+  top: 21px;
+  right: 21px;
+  height: 96px;
+  width: 76px;
+  border: 1px dotted transparent;
+  box-sizing: content-box;
+}
+
+.postcard svg.stamp {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 100px;
+  /*box-shadow: 0px 0px 1px hsla(0, 0%, 0%, 0.33);*/
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.postcard svg.stamp {
+  opacity: 0;
+  transition: all 333ms linear;
+}
+.locked.postcard svg.stamp[alt="Locked Postcard"],
+.unlocked.postcard svg.stamp[alt="Unlocked Postcard"] {
+  opacity: 1;
+}
+
+.encrypt.operation .intro.message {
+  width: 75%;
+}
+.encrypt.operation.complete .intro.message,
+.encrypt.operation.incomplete .completed.message {
+  display:none;
+}
+.encrypt.operation.incomplete .progress_graphic {
+  margin-top: 5px;
+}
+
+/* Progress animations */
+
+.postcard.making_keys .key_pair.operation.progress_graphic div {
+  width: 90%;
+  transition: width 3s ease-in;
+}
+.postcard.keys_are_ready .key_pair.operation.progress_graphic div {
+  width: 100%;
+  transition: none;
+}
+
+.postcard.encrypting .encrypt.operation.progress_graphic div {
+  width: 90%;
+  transition: width 1s ease-in;
+}
+.postcard.encrypted .encrypt.operation.progress_graphic div {
+  width: 100%;
+  transition: none;
+}
+
+.postcard .decrypt.operation.progress_graphic div {
+  transition: width 155ms ease-out;
+}
+.postcard.unlocked .decrypt.operation.progress_graphic div {
+  width: 100%;
+}
+
+/* Make a set of keys */
+
+.make_keys_view.processing .intro.message,
+.make_keys_view.failed .intro.message,
+.make_keys_view.complete .intro.message,
+.make_keys_view .processing.message,
+.make_keys_view .error.message,
+.complete.make_keys_view .incomplete.message,
+.incomplete.make_keys_view .completed.message {
+  display:none;
+}
+
+.make_keys_view.processing .processing.message,
+.make_keys_view.failed .error.message {
+  display:block;
+}
+
+.make_keys_view div.secret_phrase,
+.make_keys_view div.email_address {
+  margin: 5px 0 0;
+  z-index: 2;
+}
+
+.postcard label.unacceptable span.erase {
+  position: absolute; right: 100%; margin-right: 3px; font-size: 15px;
+}
+
+
+.postcard button {
+  margin-bottom: -5px;
+}

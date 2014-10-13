@@ -1,0 +1,92 @@
+body { font: 20px/20px sans-serif; }
+[name=secret_phrase].masked { font: bold 15px/20px "Consolas", "PT Sans", monospace; }
+[name=Base58]:not(.undefined) { font: 10px/10px "Courier", monospace; }
+
+#index_page_view header h1,
+input[name=miniLockID]:not(.undefined) {
+  text-rendering: geometricPrecision;
+}
+
+/* Corbel */
+
+body.corbel {
+  font: bold 19px/20px "Corbel";
+}
+body.corbel #index_page_view header {
+  font: bold 60px/50px "Corbel";
+  letter-spacing: -0.04em;
+}
+body.corbel input[name=miniLockID]:not(.undefined) {
+  font-family: "Consolas";
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+}
+body.corbel [name=Base58]:not(.undefined) {
+  font: 10px/10px "Consolas";
+}
+body.corbel .key,
+body.corbel div.postie header,
+body.corbel div.make_keys_view header,
+body.corbel div.make_keys_view footer {
+  font: bold 15px/15px "Corbel";
+}
+body.corbel .postcard header,
+body.corbel .outputs_view p,
+body.corbel .encrypt.operation,
+body.corbel #write_postcard_view div.mailto em,
+body.corbel #write_postcard_view div.text aside,
+body.corbel div.make_keys_view aside,
+body.corbel #index_page_view div.examples p,
+body.corbel #index_page_view div.hosts p,
+body.corbel #index_page_view > header p {
+  font: italic 15px/20px "Corbel";
+}
+body.corbel .examples p em,
+body.corbel .postcard header em,
+body.corbel .output p em {
+  font-weight: bold;
+}
+body.corbel .copy.URL > div {
+  font: bold 10px/10px "Corbel";
+  letter-spacing: -0.05em;
+}
+
+/* Avenir Next */
+
+body.avenir {
+  font: normal 19px/20px "AvenirNext-DemiBold";
+}
+body.avenir .copy.URL > div,
+body.avenir [name=Base58]:not(.undefined) {
+  font: bold 10px/10px "Consolas", "Courier New", monospace;
+}
+body.avenir #index_page_view header {
+  font: 57px/50px "AvenirNext-Bold";
+  letter-spacing: -0.040em;
+}
+body.avenir input[name=miniLockID]:not(.undefined) {
+  font-family: "AvenirNextCondensed-DemiBold";
+}
+body.avenir .key,
+body.avenir div.postie header,
+body.avenir div.make_keys_view header,
+body.avenir div.make_keys_view footer {
+  font: 15px/15px "AvenirNext-DemiBold";
+}
+body.avenir .postcard header,
+body.avenir .outputs_view p,
+body.avenir .encrypt.operation,
+body.avenir #write_postcard_view div.mailto em,
+body.avenir #write_postcard_view div.text aside,
+body.avenir div.make_keys_view aside,
+body.avenir #index_page_view div.examples p,
+body.avenir #index_page_view div.hosts p,
+body.avenir #index_page_view > header p {
+  font: 15px/20px "AvenirNext-Italic";
+}
+body.avenir .examples p em,
+body.avenir .postcard header em,
+body.avenir .output p em {
+  font-family: "AvenirNext-DemiBoldItalic";
+}

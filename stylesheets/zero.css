@@ -1,0 +1,11 @@
+body, section, article, header, footer, nav, div, h1, h2, p, pre, ul, li, input, textarea, button { margin: 0; padding: 0; border: 0; }
+body, section, article, header, footer, nav, div, h1, h2, p, pre, ul, li { display: block; position: relative; box-sizing: border-box; }
+button, code, h1, h2, input, pre, textarea, var { font: inherit; }
+textarea, input[type=text], input[type=email], input[type=range] { width: 100%; }
+a, button { outline: none; }
+/*a:focus { outline: none; }*/
+
+/* Cursor */
+
+* { cursor: default; }
+a[href]:hover { cursor: pointer; }

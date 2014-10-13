@@ -1,0 +1,113 @@
+
+/* Typical Border */
+
+.outputs_view button,
+.outputs_view a.rw,
+#write_postcard_view div.copy_URL a,
+input[type=text],
+input[type=email],
+textarea,
+button,
+div.progress_graphic,
+div.byte_stream b.byte {
+  border: 1px solid hsla(0, 0%, 0%, 0.15);
+}
+
+.postcard .postie [name=email_address],
+.postcard .postie [name=miniLockID],
+.postcard .make_keys_view [name=email_address],
+.postcard .make_keys_view [name=secret_phrase],
+.postcard > b.line,
+.postcard a.stamp {
+  border-color: hsla(0, 0%, 0%, 0.5);
+}
+
+
+/* Paints */
+
+body {
+  background: fixed hsl(0, 0%, 33%) radial-gradient(900px at 50% 25%, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.25));
+  color: black;
+}
+
+body.ready {
+  background-color: hsl(260, 8%, 66%);
+}
+
+.postcard {
+  background: hsla(0, 0%, 100%, 0.8);
+  box-shadow: 0px 2px 8px hsla(0, 0%, 0%, 0.33);
+}
+
+input,
+textarea {
+  color: black;
+}
+
+a {
+  color: inherit;
+}
+
+body.offline a[href^="http"],
+body.offline div.hosts,
+.undefined.identity,
+.undefined.identity .key h2,
+.postcard.locked div.author .email_address,
+.postcard.locked div.author .email_address input,
+.postcard.locked div.author .miniLockID,
+.postcard.locked div.author .public.key {
+  color: hsla(0, 0%, 0%, 0.15);
+}
+.undefined.identity svg path,
+.postcard.locked div.author .miniLockID h2 path {
+  fill: hsla(0, 0%, 0%, 0.15);
+}
+div.progress_graphic div.progress {
+  background: hsla(0, 0%, 0%, 0.15);
+}
+
+/*.outputs_view a.rw.undefined var,*/
+.postcard > header,
+.output > header,
+article.postcard.locked div.author,
+article.postcard > .input label,
+article.postcard > .text label,
+article.postcard [name=miniLockID].expired,
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder,
+input[type=file].undefined {
+  color: hsla(0, 0%, 0%, 0.5);
+}
+
+button,
+input[type=text],
+input[type=email],
+textarea {
+  background: transparent;
+}
+
+
+
+button:focus {
+  background: white;
+}
+button:active,
+button.activated {
+  background: black;
+  color: white;
+}
+
+.postcard input[type=text]:focus,
+.postcard input[type=email]:focus,
+.postcard textarea:focus,
+div.make_keys_view.processing button:disabled,
+div.make_keys_view.processing input[type=email],
+div.make_keys_view.processing textarea {
+  background: white;
+}
+
+textarea.acceptable,
+input[type=text].acceptable,
+input[type=email].acceptable {
+  background: hsla(180, 50%, 100%, 0.90);
+}

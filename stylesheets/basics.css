@@ -1,0 +1,99 @@
+body { transition: background-color 333ms linear; padding: 10px; }
+
+body > h1 {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  font-size: 5px;
+  line-height: 10px;
+  text-align: center;
+  opacity: 0.33;
+}
+
+nav h3 {
+  font-size: 5px;
+}
+
+nav {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+@media screen and (min-height: 800px) {
+  nav {
+    position: fixed;
+    bottom: 100px;
+    left: 100px;
+  }
+}
+/* Inputs */
+
+textarea {
+  padding: 9px;
+  height: 60px;
+  border: 1px solid transparent;
+  resize: none;
+}
+
+/* Controls */
+
+button {
+  padding: 9px 19px;
+  margin: 0px -10px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* H2 */
+
+div.senderID h2,
+div.filename h2,
+div.encrypted.encoded.input h2,
+div.text h2,
+div.hue h2,
+div.postie h2,
+div.make_keys_view h2,
+div.author h2,
+div.identity h2 {
+  position: absolute;
+  top: 10px;
+  right: 100%;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+h2 svg {
+  height: 20px;
+  width: 15px;
+  vertical-align: top;
+  position: relative;
+  top: -2px;
+}
+
+/* Progress Graphic */
+
+div.progress_graphic,
+div.progress_graphic > div {
+  height: 5px;
+}
+div.progress_graphic > div {
+  width: 0%;
+}
+
+/* Byte Stream */
+
+div.byte_stream {
+  margin: 0px 1px;
+}
+div.byte_stream b.byte {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0px 1px 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}

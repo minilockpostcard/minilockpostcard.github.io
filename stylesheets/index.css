@@ -1,0 +1,62 @@
+#index_page_view {
+  padding: 20px 0;
+  margin-left: 50%;
+}
+#index_page_view > header {
+  margin: 20px 0;
+  height: 50px;
+}
+#index_page_view header b {
+  position: absolute;
+  display: block;
+  left: -5px; bottom: -5px;
+  width: 50px;
+  overflow: hidden;
+  height: 50px;
+  opacity: 0;
+}
+#index_page_view header b:last-child {
+  position: absolute;
+  display: block;
+  overflow: visible;
+  left: 45px; bottom: 0px;
+  height: 50px;
+  opacity: 1;
+}
+
+#index_page_view > header svg.stamp {
+  display: block;
+  position: absolute;
+  z-index: 1; top: -7px; left: -5px;
+  height: 60px;
+  width: 50px;
+  box-shadow: 0px 0px 1px hsla(0, 0%, 0%, 0.1);
+  -webkit-transform: rotate(-3deg);
+}
+
+#index_page_view > p {
+  margin-right: 40px;
+  max-width: 600px;
+}
+
+#index_page_view .hosts h2 {
+  margin-right: 15px;
+  top: 0;
+}
+
+#index_page_view .examples h2,
+#index_page_view .hosts h2 {
+  margin-bottom: 20px;
+}
+#index_page_view .examples > div {
+  margin: 20px 0 0;
+}
+#index_page_view .examples img {
+  height: 60px;
+  position: absolute;
+  right: 100%;
+  top: -1px;
+  margin-right: 8px;
+  box-shadow: 0px 0px 1px hsla(0, 0%, 0%, 0.5);
+  cursor: pointer;
+}
