@@ -204,7 +204,7 @@ class UnlockPostcardView extends Backbone.View
         <div>
       </article>
       <div class="outputs_view"></div>
-      <nav style="display:#{if location.protocol.match("extension") then "none" else "block"};">
+      <nav style="display:#{if location.protocol.match("safariextension") then "none" else "block"};">
         <h3>Site Map</h3>
         <a tabindex="-1" #{'href="/"' unless location.pathname is "/" }>#{minipost.hostname}</a><br>
         <a tabindex="-1" #{'href="'+"/write#{ minipost.HTMLsuffix }"+'"' unless location.pathname is "/write#{ minipost.HTMLsuffix }" }>#{minipost.hostname}/write</a><br>
