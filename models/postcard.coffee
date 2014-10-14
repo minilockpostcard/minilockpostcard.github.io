@@ -10,7 +10,7 @@ class Postcard extends Backbone.Model
   maxHue: 320
 
   url: (options={}) ->
-    "/unlock#{minipost.HTMLsuffix}?Base58=#{@get("Base58")}"
+    "/unlock#{minipost.pageSuffix}?Base58=#{@get("Base58")}"
 
   validate: (attributes) ->
     if attributes.Base58?

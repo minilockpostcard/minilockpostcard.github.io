@@ -5,7 +5,7 @@ Function.delay = (amount, f) -> setTimeout(f, amount)
 
 window.minipost =
   hostname: if location.hostname is "minipost.dev" then "minipost.link" else location.hostname
-  HTMLsuffix: if location.hostname in ["minipost.link", "auto.minipost.link", "minipostlink.github.io"] then "" else ".html"
+  pageSuffix: if location.hostname in ["minipost.link", "auto.minipost.link", "minipostlink.github.io"] then "" else ".html"
 
 $(document).ready ->
   typefaces = {avenir: "AvenirNext-DemiBold", corbel: "Corbel", optima: "Optima"}
@@ -28,8 +28,8 @@ $(document).ready ->
   Backbone.history.start({pushState: true}) unless location.protocol is "chrome-extension:"
 
 class MinipostRouter extends Backbone.Router
-  IndexPageView = require "./views/index_page_view.coffee"
-  WritePostcardView = require "./views/write_postcard.coffee"
+  IndexPageView      = require "./views/index_page_view.coffee"
+  WritePostcardView  = require "./views/write_postcard.coffee"
   UnlockPostcardView = require "./views/unlock_postcard.coffee"
 
   initialize: ->
@@ -49,21 +49,22 @@ class MinipostRouter extends Backbone.Router
     ":bundle/unlock.html": "unlockPostcard"
 
   showIndex: (params) ->
-    console.info "showIndex"
+    console.info "Open Index", params
     @currentView?.remove()
     @currentView = new IndexPageView params
 
   writePostcard: (params) ->
-    console.info "writePostcard"
+    console.info "Write Postcard", params
     @currentView?.remove()
     @currentView = new WritePostcardView params
 
   unlockPostcard: (params) ->
-    console.info "unlockPostcard"
+    console.info "Unlock Postcard", params
     @currentView?.remove()
     @currentView = new UnlockPostcardView params
 
-  execute: (callback) ->
+  execute: (callback, args) ->
+    console.info "execute", args
     if (callback) then callback.call(this, @params())
 
   params: (url=window.location) ->
@@ -100,6 +101,7 @@ $(document).on "click", "a[href]", (event) ->
   event.preventDefault()
   destination = new URL event.currentTarget.href
   if location.protocol is "chrome-extension:"
+    router = minipost.router
     method = switch
       when destination.pathname.match("write") then "writePostcard"
       when destination.pathname.match("unlock") then "unlockPostcard"
