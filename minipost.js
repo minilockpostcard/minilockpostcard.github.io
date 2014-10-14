@@ -4702,38 +4702,47 @@ MinipostRouter = (function(_super) {
     ":bundle/unlock.html": "unlockPostcard"
   };
 
-  MinipostRouter.prototype.showIndex = function() {
+  MinipostRouter.prototype.showIndex = function(params) {
     var _ref1;
     console.info("showIndex");
     if ((_ref1 = this.currentView) != null) {
       _ref1.remove();
     }
-    return this.currentView = new IndexPageView(this.params());
+    return this.currentView = new IndexPageView(params);
   };
 
-  MinipostRouter.prototype.writePostcard = function() {
+  MinipostRouter.prototype.writePostcard = function(params) {
     var _ref1;
     console.info("writePostcard");
     if ((_ref1 = this.currentView) != null) {
       _ref1.remove();
     }
-    return this.currentView = new WritePostcardView(this.params());
+    return this.currentView = new WritePostcardView(params);
   };
 
-  MinipostRouter.prototype.unlockPostcard = function() {
+  MinipostRouter.prototype.unlockPostcard = function(params) {
     var _ref1;
     console.info("unlockPostcard");
     if ((_ref1 = this.currentView) != null) {
       _ref1.remove();
     }
-    return this.currentView = new UnlockPostcardView(this.params());
+    return this.currentView = new UnlockPostcardView(params);
   };
 
-  MinipostRouter.prototype.params = function() {
+  MinipostRouter.prototype.execute = function(callback) {
+    if (callback) {
+      return callback.call(this, this.params());
+    }
+  };
+
+  MinipostRouter.prototype.params = function(url) {
     var name, pair, params, value, _i, _len, _ref1, _ref2;
+    if (url == null) {
+      url = window.location;
+    }
     params = {};
-    if (location.search) {
-      _ref1 = location.search.replace("?", "").split("&");
+    if (url.search) {
+      _ref1 = url.search.replace("?", "").split("&");
       for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
         pair = _ref1[_i];
         _ref2 = pair.split("="), name = _ref2[0], value = _ref2[1];
@@ -4773,19 +4782,32 @@ $(document).ready(function() {
 });
 
 $(document).on("click", "a[href]", function(event) {
-  var destination, hrefAttribute;
+  var destination, hrefAttribute, method;
+  hrefAttribute = event.currentTarget.getAttribute("href");
+  if (hrefAttribute[0] !== "/") {
+    return;
+  }
   if (event.metaKey === true) {
     return;
   }
-  hrefAttribute = event.currentTarget.getAttribute("href");
+  event.preventDefault();
   destination = new URL(event.currentTarget.href);
-  if (destination.hostname === location.hostname) {
-    if (hrefAttribute[0] === "/") {
-      Backbone.history.navigate(hrefAttribute, {
-        trigger: true
-      });
-      return event.preventDefault();
-    }
+  if (location.protocol === "chrome-extension:") {
+    method = (function() {
+      switch (false) {
+        case !destination.pathname.match("write"):
+          return "writePostcard";
+        case !destination.pathname.match("unlock"):
+          return "unlockPostcard";
+        default:
+          return "showIndex";
+      }
+    })();
+    return router[method](router.params(destination));
+  } else {
+    return Backbone.history.navigate(hrefAttribute, {
+      trigger: true
+    });
   }
 });
 
