@@ -48,25 +48,28 @@ class MinipostRouter extends Backbone.Router
     ":bundle/write.html": "writePostcard"
     ":bundle/unlock.html": "unlockPostcard"
 
-  showIndex: ->
+  showIndex: (params) ->
     console.info "showIndex"
     @currentView?.remove()
-    @currentView = new IndexPageView @params()
+    @currentView = new IndexPageView params
 
-  writePostcard: ->
+  writePostcard: (params) ->
     console.info "writePostcard"
     @currentView?.remove()
-    @currentView = new WritePostcardView @params()
+    @currentView = new WritePostcardView params
 
-  unlockPostcard: ->
+  unlockPostcard: (params) ->
     console.info "unlockPostcard"
     @currentView?.remove()
-    @currentView = new UnlockPostcardView @params()
+    @currentView = new UnlockPostcardView params
 
-  params: ->
+  execute: (callback) ->
+    if (callback) then callback.call(this, @params())
+
+  params: (url=window.location) ->
     params = {}
-    if location.search
-      for pair in location.search.replace("?", "").split("&")
+    if url.search
+      for pair in url.search.replace("?", "").split("&")
         [name, value] = pair.split("=")
         params[name] = decodeURIComponent value
     return params
@@ -91,13 +94,19 @@ $(document).ready ->
 
 
 $(document).on "click", "a[href]", (event) ->
-  return if event.metaKey is true # Let them open tabs!
   hrefAttribute = event.currentTarget.getAttribute("href")
+  return if hrefAttribute[0] isnt "/"
+  return if event.metaKey is true # Let them open tabs!
+  event.preventDefault()
   destination = new URL event.currentTarget.href
-  if destination.hostname is location.hostname
-    if hrefAttribute[0] is "/"
-      Backbone.history.navigate hrefAttribute, trigger:yes
-      event.preventDefault()
+  if location.protocol is "chrome-extension:"
+    method = switch
+      when destination.pathname.match("write") then "writePostcard"
+      when destination.pathname.match("unlock") then "unlockPostcard"
+      else "showIndex"
+    router[method] router.params(destination)
+  else
+    Backbone.history.navigate hrefAttribute, trigger:yes
 
 
 $(document).on "mousedown", "a.copy_n_paste, em.copy_n_paste", (event) ->
