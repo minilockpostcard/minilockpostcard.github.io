@@ -100,6 +100,7 @@ $(document).on "click", "a[href]", (event) ->
   event.preventDefault()
   destination = new URL event.currentTarget.href
   if location.protocol is "chrome-extension:"
+    router = minipost.router
     method = switch
       when destination.pathname.match("write") then "writePostcard"
       when destination.pathname.match("unlock") then "unlockPostcard"
