@@ -5,4 +5,4 @@ class Shortcut extends Backbone.Model
     @set "identifier", (number.toString() for number in miniLockLib.NaCl.randomBytes(4)).join("")
 
   url: (options={}) ->
-    "/unlock#{minipost.HTMLsuffix}?Base58=#{@get("Base58")}"
+    "/unlock#{minipost.pageSuffix}?Base58=#{@get("Base58")}"

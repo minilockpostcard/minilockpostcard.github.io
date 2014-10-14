@@ -1,5 +1,3 @@
-exports.fileExtension = if location.hostname is "minipost.dev" then ".html" else ""
-
 exports.stamps = require "./HTML.stamps.coffee"
 
 exports.stamp = (name, attributes={}) ->
@@ -13,9 +11,9 @@ exports.a = (text, attributes={}) ->
   if attributes.href
     if attributes.href[0] is "/"
       attributes.href = if attributes.href.indexOf("?") isnt -1
-        attributes.href.replace("?", "#{@fileExtension}?")
+        attributes.href.replace("?", "#{minipost.pageSuffix}?")
       else
-        attributes.href + @fileExtension
+        attributes.href + minipost.pageSuffix
     attributes.href = encodeURI attributes.href
   attributes.tabindex ?= -1
   """<a #{@attributes(attributes)}>#{text}</a>"""

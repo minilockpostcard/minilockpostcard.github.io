@@ -5,7 +5,7 @@ Function.delay = (amount, f) -> setTimeout(f, amount)
 
 window.minipost =
   hostname: if location.hostname is "minipost.dev" then "minipost.link" else location.hostname
-  HTMLsuffix: if location.hostname in ["minipost.link", "auto.minipost.link", "minipostlink.github.io"] then "" else ".html"
+  pageSuffix: if location.hostname in ["minipost.link", "auto.minipost.link", "minipostlink.github.io"] then "" else ".html"
 
 $(document).ready ->
   typefaces = {avenir: "AvenirNext-DemiBold", corbel: "Corbel", optima: "Optima"}
