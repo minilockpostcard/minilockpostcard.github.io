@@ -47,8 +47,7 @@ class IndexPageView extends Backbone.View
         <br>
         #{HTML.a "Unlock a postcard code or file", href:"/unlock"}<br>
       </p>
-      <br>
-      <br>
+
       <div class="examples">
         <h2>Examples</h2>
         <div class="example">
@@ -67,8 +66,7 @@ class IndexPageView extends Backbone.View
           <img alt="Posting a question to the author." src="examples/Post a question.png">
         </div>
       </div>
-      <br>
-      <br>
+
       <div class="downloads" style="#{if location.protocol is "chrome-extension:" then "display:none;" else ""}">
         <h2>Downloads</h2>
         <div class="safari">
@@ -91,8 +89,6 @@ class IndexPageView extends Backbone.View
           </ol>
           <img alt="miniLock Postcard button in Safari toolbar" src="downloads/Safari + miniLock Postcard.png">
         </div>
-        <br>
-        <br>
         <div class="chrome">
           Get miniLock Postcard for Google Chrome<br>
           <p>
@@ -112,8 +108,7 @@ class IndexPageView extends Backbone.View
           <img alt="Google Chrome + miniLock Postcard" src="downloads/Chrome + miniLock Postcard.png">
         </div>
       </div>
-      <br>
-      <br>
+
       <div class="hosts">
         <h2>Hosts</h2>
         <div class="easy">

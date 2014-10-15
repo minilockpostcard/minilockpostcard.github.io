@@ -8,4 +8,4 @@ a, button { outline: none; }
 /* Cursor */
 
 * { cursor: default; }
-a[href]:hover { cursor: pointer; }
+a[href]:hover, a[href]:hover * { cursor: pointer; }
