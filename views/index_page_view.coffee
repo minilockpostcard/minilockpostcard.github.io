@@ -69,7 +69,7 @@ class IndexPageView extends Backbone.View
       </div>
       <br>
       <br>
-      <div class="downloads">
+      <div class="downloads" style="#{if location.protocol is "chrome-extension:" then "display:none;" else ""}">
         <h2>Downloads</h2>
         <div class="safari">
           <a tabindex="-1" href="https://github.com/minipostlink/minipost-safari/raw/master/miniLock%20Postcard.safariextz">Get miniLock Postcard for Apple Safari</a><br>
