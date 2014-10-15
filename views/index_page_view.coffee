@@ -72,11 +72,23 @@ class IndexPageView extends Backbone.View
       <div class="downloads" style="#{if location.protocol is "chrome-extension:" then "display:none;" else ""}">
         <h2>Downloads</h2>
         <div class="safari">
-          <a tabindex="-1" href="https://github.com/minipostlink/minipost-safari/raw/master/miniLock%20Postcard.safariextz">Get miniLock Postcard for Apple Safari</a><br>
+          Get miniLock Postcard for Apple Safari<br>
           <p>
             This extension adds a miniLock Postcard button to your toolbar for quick access to the write and unlock screens.
             Works without a network connection.
           </p>
+          <p>
+            Instructions:
+          </p>
+          <ol>
+            <li><a href="https://github.com/minipostlink/minipost-safari/raw/master/miniLock%20Postcard.safariextz">Download <em>miniLock Postcard.safariextz</em></a> and save it on your computer.</li>
+            <li>Double-click the <em>miniLock Postcard.safariextz</em> file to open it with Safari.</li>
+            <li>Review the dialog that appears, and if you would like to proceed, click <em>Install</em>.
+            <li>
+              Click <img alt="the miniLock Postcard button" src="downloads/Safari toolbar button.png"> in the Safari toolbar to begin writing a postcard.
+              Click it again to unlock a postcard code or file.
+            </li>
+          </ol>
           <img alt="miniLock Postcard button in Safari toolbar" src="downloads/Safari + miniLock Postcard.png">
         </div>
         <br>
@@ -88,11 +100,11 @@ class IndexPageView extends Backbone.View
             Make and unlock postcards with ease; works without a network connection.
           </p>
           <p>
-            Install Instructions:
+            Instructions:
           </p>
           <ol>
             <li><a href="https://github.com/minipostlink/minipost-chrome/raw/master/miniLock%20Postcard.crx">Download <em>miniLock Postcard.crx</em></a> and save it to your computer.</li>
-            <li>Click the Chrome menu icon <img src="downloads/Chrome menu button.png" width="29" height="29" alt="Chrome menu" title="Chrome menu"> on the browser toolbar.</li>
+            <li>Click the Chrome menu icon <img src="downloads/Chrome menu button.png" alt="Chrome menu" title="Chrome menu"> on the browser toolbar.</li>
             <li>Select <em>More Tools</em> &gt; <em>Extensions</em>.</li>
             <li>Locate the <em>miniLock Postcard.crx</em> file on your computer and drag it onto the Extensions page.</li>
             <li>Review the dialog that appears, and if you would like to proceed, click <em>Install</em>.
