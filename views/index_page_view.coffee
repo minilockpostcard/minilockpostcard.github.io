@@ -81,7 +81,7 @@ class IndexPageView extends Backbone.View
         </div>
         <br>
         <br>
-        <div class="chrome">
+        <div class="chrome" style="display:none;">
           Get miniLock Postcard for Google Chrome<br>
           <p>
             This app appears in your Chrome Apps folder and launcher after you install it.
