@@ -76,7 +76,10 @@ class IndexPageView extends Backbone.View
             Works without a network connection.
           </p>
           <p>
-            Instructions:
+            <a href="https://github.com/minipostlink/minipost-safari/">Review the source code for this extension</a>.
+          </p>
+          <p>
+            <em>Setup Instructions</em>:
           </p>
           <ol>
             <li><a href="https://github.com/minipostlink/minipost-safari/raw/master/miniLock%20Postcard.safariextz">Download <em>miniLock Postcard.safariextz</em></a> and save it on your computer.</li>
@@ -96,7 +99,10 @@ class IndexPageView extends Backbone.View
             Make and unlock postcards with ease; works without a network connection.
           </p>
           <p>
-            Instructions:
+            <a href="https://github.com/minipostlink/minipost-chrome/">Review the source code for this app</a>.
+          </p>
+          <p>
+            <em>Setup Instructions</em>:
           </p>
           <ol>
             <li><a href="https://github.com/minipostlink/minipost-chrome/raw/master/miniLock%20Postcard.crx">Download <em>miniLock Postcard.crx</em></a> and save it to your computer.</li>

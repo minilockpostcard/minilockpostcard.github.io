@@ -35,11 +35,11 @@
 }
 
 #index_page_view p {
-  margin: 0px 20px 0px 0;
+  margin: 10px 20px 0px 0;
   max-width: 600px;
 }
-#index_page_view p + p {
-  margin: 10px 20px 0px 0;
+#index_page_view p:first-of-type {
+  margin: 0px 20px 0px 0;
 }
 
 #index_page_view ol {
