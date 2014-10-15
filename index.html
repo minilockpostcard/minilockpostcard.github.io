@@ -5,8 +5,8 @@
 <script src="minipost.js" charset="UTF-8"></script>
 <h1 aria-live="polite"></h1>
 <style>
-body, section, article, header, footer, nav, div, h1, h2, p, pre, ul, li, input, textarea, button { margin: 0; padding: 0; border: 0; }
-body, section, article, header, footer, nav, div, h1, h2, p, pre, ul, li { display: block; position: relative; box-sizing: border-box; }
+body, section, article, header, footer, nav, div, h1, h2, p, pre, ol, ul, li, input, textarea, button { margin: 0; padding: 0; border: 0; }
+body, section, article, header, footer, nav, div, h1, h2, p, pre, ol, ul, li { display: block; position: relative; box-sizing: border-box; }
 button, code, h1, h2, input, pre, textarea, var { font: inherit; }
 textarea, input[type=text], input[type=email], input[type=range] { width: 100%; }
 a, button { outline: none; }
@@ -160,6 +160,7 @@ body.corbel #index_page_view div.hosts p,
 body.corbel #index_page_view > header p {
   font: italic 15px/20px "Corbel";
 }
+body.corbel .downloads li em,
 body.corbel .examples p em,
 body.corbel .postcard header em,
 body.corbel .output p em {
@@ -198,12 +199,14 @@ body.avenir .encrypt.operation,
 body.avenir #write_postcard_view div.mailto em,
 body.avenir #write_postcard_view div.text aside,
 body.avenir div.make_keys_view aside,
+body.avenir #index_page_view div.downloads li,
 body.avenir #index_page_view div.downloads p,
 body.avenir #index_page_view div.examples p,
 body.avenir #index_page_view div.hosts p,
 body.avenir #index_page_view > header p {
   font: 15px/20px "AvenirNext-Italic";
 }
+body.avenir .downloads li em,
 body.avenir .examples p em,
 body.avenir .postcard header em,
 body.avenir .output p em {
@@ -577,8 +580,29 @@ div.unavailable.output {
 }
 
 #index_page_view p {
-  margin-right: 40px;
+  margin: 0px 20px 0px 0;
   max-width: 600px;
+}
+#index_page_view p + p {
+  margin: 10px 20px 0px 0;
+}
+
+#index_page_view ol {
+  max-width: 600px;
+  margin: 10px 0px 20px 0;
+  list-style-type: decimal;
+}
+
+#index_page_view ol li {
+  margin: 10px 0;
+  display: list-item;
+}
+
+#index_page_view ol img {
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+  margin-bottom: 4px;
 }
 
 #index_page_view .hosts h2 {
@@ -595,8 +619,8 @@ div.unavailable.output {
 #index_page_view .examples > div {
   margin: 20px 0 0;
 }
-#index_page_view .downloads img,
-#index_page_view .examples img {
+#index_page_view .downloads div > img,
+#index_page_view .examples div > img {
   height: 60px;
   position: absolute;
   right: 100%;
