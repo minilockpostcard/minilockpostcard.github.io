@@ -4630,8 +4630,7 @@ $(document).ready(function() {
   var available, container, id, monospaceWidth, name, tests, typefaceIsAvailable, typefaces, _i, _len, _ref1;
   typefaces = {
     avenir: "AvenirNext-DemiBold",
-    corbel: "Corbel",
-    optima: "Optima"
+    corbel: "Corbel"
   };
   available = [];
   tests = ["<a id=\"monospace\" style=\"font: 100px/1 monospace; display:inline-block;\">ii</a>"];
