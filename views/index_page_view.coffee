@@ -43,7 +43,7 @@ class IndexPageView extends Backbone.View
         #{if navigator.onLine then "You can disconnect your network and continue your session offline if your soul has paranormal desires." else 'And now we are offline where the air is fresh and the noise is pink.'}
         <br>
         <br>
-        #{HTML.a "Make a postcard for your postie", href:"/write"}<br>
+        #{HTML.a "Make a miniLock postcard for your postie", href:"/write"}<br>
         <br>
         #{HTML.a "Unlock a postcard code or file", href:"/unlock"}<br>
       </p>
