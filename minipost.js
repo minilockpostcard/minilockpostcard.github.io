@@ -6029,7 +6029,7 @@ UnlockPostcardView = (function(_super) {
 
   UnlockPostcardView.prototype.renderBodyBackgroundColor = function() {
     var color;
-    color = this.postcard.get("hue") ? "hsl(" + (this.postcard.get("hue")) + ", 66%, 66%);" : "";
+    color = this.postcard.get("hue") ? "hsl(" + (this.postcard.get("hue")) + ", 66%, 66%);" : "hsl(260, 8%, 50%);";
     return $(document.body).css({
       "background-color": color
     });
