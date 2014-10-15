@@ -80,12 +80,23 @@ class IndexPageView extends Backbone.View
           <img alt="miniLock Postcard button in Safari toolbar" src="downloads/Safari + miniLock Postcard.png">
         </div>
         <br>
+        <br>
         <div class="chrome">
           <a tabindex="-1" href="https://github.com/minipostlink/minipost-chrome/raw/master/miniLock%20Postcard.crx">Get miniLock Postcard for Google Chrome</a><br>
           <p>
-            This Chrome App add a miniLock Postcard entry to your Chrome Apps folder and launcher.
+            This app appears in your Chrome Apps folder and launcher after you install it.
             Make and unlock postcards with ease; works without a network connection.
           </p>
+          <p>
+            Install Instructions:
+          </p>
+          <ol>
+            <li><a href="https://github.com/minipostlink/minipost-chrome/raw/master/miniLock%20Postcard.crx">Download the miniLock Postcard.crx file</a> and save it to your computer.</li>
+            <li>Click the Chrome menu icon <img src="downloads/Chrome menu button.png" width="29" height="29" alt="Chrome menu" title="Chrome menu"> on the browser toolbar.</li>
+            <li>Select <em>Tools &gt; Extensions</em>.</li>
+            <li>Locate the <a href="https://github.com/minipostlink/minipost-chrome/raw/master/miniLock%20Postcard.crx">miniLock Postcard.crx</a> file on your computer and drag it onto the Extensions page.</li>
+            <li>Review the dialog that appears, and if you would like to proceed, click <em>Install</em>.
+          </ol>
           <img alt="Google Chrome + miniLock Postcard" src="downloads/Chrome + miniLock Postcard.png">
         </div>
       </div>

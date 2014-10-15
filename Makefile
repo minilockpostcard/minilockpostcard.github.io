@@ -108,9 +108,9 @@ deploy:
 	make index.html
 
 nodes:
-	make minipost.link
-	make auto.minipost.link
 	make minipostlink.github.io
+	make auto.minipost.link
+	make minipost.link
 	make deploy_mirror
 
 deploy_mirror:
