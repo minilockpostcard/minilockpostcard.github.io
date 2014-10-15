@@ -69,6 +69,28 @@ class IndexPageView extends Backbone.View
       </div>
       <br>
       <br>
+      <div class="downloads">
+        <h2>Downloads</h2>
+        <div class="safari">
+          <a tabindex="-1" href="https://github.com/minipostlink/minipost-safari/raw/master/miniLock%20Postcard.safariextz">Get miniLock Postcard for Apple Safari</a><br>
+          <p>
+            This extension adds a miniLock Postcard button to your toolbar to quickly access the write and unlock screens.
+            Works without a network connection.
+          </p>
+          <img alt="miniLock Postcard button in Safari toolbar" src="downloads/Safari + miniLock Postcard.png">
+        </div>
+        <br>
+        <div class="chrome">
+          <a tabindex="-1" href="https://github.com/minipostlink/minipost-chrome/">Get miniLock Postcard for Google Chrome</a><br>
+          <p>
+            This Chrome App add a miniLock Postcard entry to your Chrome Apps folder and launcher.
+            Make and unlock postcards with ease; works without a network connection.
+          </p>
+          <img alt="Google Chrome + miniLock Postcard" src="downloads/Chrome + miniLock Postcard.png">
+        </div>
+      </div>
+      <br>
+      <br>
       <div class="hosts">
         <h2>Hosts</h2>
         <div class="easy">
