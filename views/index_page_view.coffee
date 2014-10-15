@@ -81,7 +81,7 @@ class IndexPageView extends Backbone.View
         </div>
         <br>
         <div class="chrome">
-          <a tabindex="-1" href="https://github.com/minipostlink/minipost-chrome/">Get miniLock Postcard for Google Chrome</a><br>
+          <a tabindex="-1" href="https://github.com/minipostlink/minipost-chrome/miniLock%20Postcard.crx">Get miniLock Postcard for Google Chrome</a><br>
           <p>
             This Chrome App add a miniLock Postcard entry to your Chrome Apps folder and launcher.
             Make and unlock postcards with ease; works without a network connection.
