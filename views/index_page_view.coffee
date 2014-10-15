@@ -74,7 +74,7 @@ class IndexPageView extends Backbone.View
         <div class="safari">
           <a tabindex="-1" href="https://github.com/minipostlink/minipost-safari/raw/master/miniLock%20Postcard.safariextz">Get miniLock Postcard for Apple Safari</a><br>
           <p>
-            This extension adds a miniLock Postcard button to your toolbar to quickly access the write and unlock screens.
+            This extension adds a miniLock Postcard button to your toolbar for quick access to the write and unlock screens.
             Works without a network connection.
           </p>
           <img alt="miniLock Postcard button in Safari toolbar" src="downloads/Safari + miniLock Postcard.png">
