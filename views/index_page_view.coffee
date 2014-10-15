@@ -126,7 +126,6 @@ class IndexPageView extends Backbone.View
             Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in Singapore.<br>
           </p>
         </div>
-        <br>
         <div class="autonomous">
           <a tabindex="-1" href="https://auto.minipost.link">auto.minipost.link</a><br>
           <p>
@@ -136,7 +135,6 @@ class IndexPageView extends Backbone.View
             Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in New York City.<br>
           </p>
         </div>
-        <br>
         <div class="github">
           <a tabindex="-1" href="https://minipostlink.github.io">minipostlink.github.io</a><br>
           <p>
