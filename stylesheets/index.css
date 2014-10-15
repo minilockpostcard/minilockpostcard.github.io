@@ -35,8 +35,29 @@
 }
 
 #index_page_view p {
-  margin-right: 40px;
+  margin: 0px 20px 0px 0;
   max-width: 600px;
+}
+#index_page_view p + p {
+  margin: 10px 20px 0px 0;
+}
+
+#index_page_view ol {
+  max-width: 600px;
+  margin: 10px 0px 20px 0;
+  list-style-type: decimal;
+}
+
+#index_page_view ol li {
+  margin: 10px 0;
+  display: list-item;
+}
+
+#index_page_view ol img {
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+  margin-bottom: 4px;
 }
 
 #index_page_view .hosts h2 {
@@ -53,8 +74,8 @@
 #index_page_view .examples > div {
   margin: 20px 0 0;
 }
-#index_page_view .downloads img,
-#index_page_view .examples img {
+#index_page_view .downloads div > img,
+#index_page_view .examples div > img {
   height: 60px;
   position: absolute;
   right: 100%;
