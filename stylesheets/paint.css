@@ -48,7 +48,12 @@ a {
   color: inherit;
 }
 
+body.offline div.downloads img {
+  opacity: 0.15;
+}
+
 body.offline a[href^="http"],
+body.offline div.downloads,
 body.offline div.hosts,
 .undefined.identity,
 .undefined.identity .key h2,

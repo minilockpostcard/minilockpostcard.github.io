@@ -80,6 +80,7 @@ body.avenir .encrypt.operation,
 body.avenir #write_postcard_view div.mailto em,
 body.avenir #write_postcard_view div.text aside,
 body.avenir div.make_keys_view aside,
+body.avenir #index_page_view div.downloads p,
 body.avenir #index_page_view div.examples p,
 body.avenir #index_page_view div.hosts p,
 body.avenir #index_page_view > header p {
