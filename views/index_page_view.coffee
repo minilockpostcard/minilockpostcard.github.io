@@ -93,7 +93,7 @@ class IndexPageView extends Backbone.View
           <ol>
             <li><a href="https://github.com/minipostlink/minipost-chrome/raw/master/miniLock%20Postcard.crx">Download <em>miniLock Postcard.crx</em></a> and save it to your computer.</li>
             <li>Click the Chrome menu icon <img src="downloads/Chrome menu button.png" width="29" height="29" alt="Chrome menu" title="Chrome menu"> on the browser toolbar.</li>
-            <li>Select <em>Tools &gt; Extensions</em>.</li>
+            <li>Select <em>More Tools</em> &gt; <em>Extensions</em>.</li>
             <li>Locate the <em>miniLock Postcard.crx</em> file on your computer and drag it onto the Extensions page.</li>
             <li>Review the dialog that appears, and if you would like to proceed, click <em>Install</em>.
           </ol>
