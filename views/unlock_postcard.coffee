@@ -137,7 +137,7 @@ class UnlockPostcardView extends Backbone.View
     color = if @postcard.get("hue")
       "hsl(#{ @postcard.get("hue") }, 66%, 66%);"
     else
-      ""
+      "hsl(260, 8%, 50%);"
     $(document.body).css "background-color": color
 
   renderText: ->
