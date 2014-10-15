@@ -8,7 +8,7 @@ window.minipost =
   pageSuffix: if location.hostname in ["minipost.link", "auto.minipost.link", "minipostlink.github.io"] then "" else ".html"
 
 $(document).ready ->
-  typefaces = {avenir: "AvenirNext-DemiBold", corbel: "Corbel", optima: "Optima"}
+  typefaces = {avenir: "AvenirNext-DemiBold", corbel: "Corbel"}
   available = []
   tests = ["""<a id="monospace" style="font: 100px/1 monospace; display:inline-block;">ii</a>"""]
   for id, name of typefaces
