@@ -41,7 +41,7 @@ backbone.js:
 	cp node_modules/backbone/backbone.js backbone.js
 
 miniLockLib.js:
-	cp node_modules/miniLockLib/miniLockLib.js miniLockLib.js
+	curl https://45678.github.io/miniLockLib/miniLockLib.js > miniLockLib.js
 
 underscore.js:
 	cp node_modules/underscore/underscore.js underscore.js
