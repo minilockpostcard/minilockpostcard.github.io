@@ -40,8 +40,11 @@ minipost.js: zepto.js underscore.js backbone.js minipost.coffee views/HTML.stamp
 backbone.js:
 	cp node_modules/backbone/backbone.js backbone.js
 
-miniLockLib.js:
-	curl https://45678.github.io/miniLockLib/miniLockLib.js > miniLockLib.js
+miniLockLib.js: node_modules/miniLockLib.js
+	cp node_modules/miniLockLib.js miniLockLib.js
+
+node_modules/miniLockLib.js:
+	curl https://45678.github.io/miniLockLib/miniLockLib.js > node_modules/miniLockLib.js
 
 underscore.js:
 	cp node_modules/underscore/underscore.js underscore.js
@@ -74,7 +77,7 @@ stamps/%.coffee: stamps/%.svg
 
 clean:
 	rm -f *.html
-	rm -f minipost.js
+	rm -f *.js
 	rm -f stamps/*.coffee
 	rm -f views/HTML.stamps.coffee
 
