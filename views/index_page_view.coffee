@@ -122,7 +122,7 @@ class IndexPageView extends Backbone.View
           <p>
             <a href="https://www.ssllabs.com/ssltest/analyze.html?d=minipost.site">Easy TLS connection with strong forward secure ciphers</a>.<br>
             <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/minipost.site.crt">Get X.509 Certificate</a>.
-            <a tabindex="-1" href="https://github.com/minipostlink/minipost/tree/deploy">Review the source code</a>.<br>
+            <a tabindex="-1" href="https://github.com/minilockpostcard/minipost/tree/deploy">Review the source code</a>.<br>
             Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in Toronto.<br>
           </p>
         </div>
@@ -131,15 +131,15 @@ class IndexPageView extends Backbone.View
           <p>
             <a href="https://www.ssllabs.com/ssltest/analyze.html?d=minilockpostcard.site">Easy TLS connection with strong forward secure ciphers</a>.<br>
             <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/minilockpostcard.site.crt">Get X.509 Certificate</a>.
-            <a tabindex="-1" href="https://github.com/minipostlink/minipost/tree/deploy">Review the source code</a>.<br>
+            <a tabindex="-1" href="https://github.com/minilockpostcard/minipost/tree/deploy">Review the source code</a>.<br>
             Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in Toronto.<br>
           </p>
         </div>
         <div class="github">
-          <a tabindex="-1" href="https://minipostlink.github.io">minipostlink.github.io</a><br>
+          <a tabindex="-1" href="https://minilockpostcard.github.io">minilockpostcard.github.io</a><br>
           <p>
-            <a href="https://www.ssllabs.com/ssltest/analyze.html?d=minipostlink.github.io">Easy TLS connection with good forward secure ciphers</a><br>
-            &amp; <a tabindex="-1" href="https://github.com/minipostlink/minipostlink.github.io/tree/master">an authentic view of the source code</a>.<br>
+            <a href="https://www.ssllabs.com/ssltest/analyze.html?d=minilockpostcard.github.io">Easy TLS connection with good forward secure ciphers</a><br>
+            &amp; <a tabindex="-1" href="https://github.com/minilockpostcard/minilockpostcard.github.io/tree/master">an authentic view of the source code</a>.<br>
             Hosted by <a tabindex="-1" href="https://github.com/">Github</a> at an unknown location.
           </p>
         </div>
@@ -163,6 +163,14 @@ class IndexPageView extends Backbone.View
             <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/auto.minipost.link.crt">Get X.509 Certificate</a>.
             <a tabindex="-1" href="https://github.com/minipostlink/minipost/tree/deploy">Review the source code</a>.<br>
             Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in New York City.<br>
+          </p>
+        </div>
+        <div class="github">
+          minipostlink.github.io<br>
+          <p>
+            Easy TLS connection with good forward secure ciphers<br>
+            &amp; <a tabindex="-1" href="https://github.com/minipostlink/minipostlink.github.io/tree/master">an authentic view of the source code</a>.<br>
+            Hosted by <a tabindex="-1" href="https://github.com/">Github</a> somewhere in the U.S.A.
           </p>
         </div>
       </div>
