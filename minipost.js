@@ -4608,10 +4608,10 @@ window.$ === undefined && (window.$ = Zepto)
 ;
 
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var Alice, Bobby, MinipostRouter, _ref,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+var Alice, Bobby, MinipostRouter, ref,
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
 if (location.hostname === "minipostlink.github.io" && location.protocol !== "https:") {
   return window.location = location.toString().replace("http:", "https:");
@@ -4623,11 +4623,11 @@ Function.delay = function(amount, f) {
 
 window.minipost = {
   hostname: location.hostname === "minipost.dev" ? "minipost.link" : location.hostname,
-  pageSuffix: (_ref = location.hostname) === "minipost.link" || _ref === "auto.minipost.link" || _ref === "minipostlink.github.io" ? "" : ".html"
+  pageSuffix: (ref = location.hostname) === "minipost.link" || ref === "auto.minipost.link" || ref === "minipostlink.github.io" ? "" : ".html"
 };
 
 $(document).ready(function() {
-  var available, container, id, monospaceWidth, name, tests, typefaceIsAvailable, typefaces, _i, _len, _ref1;
+  var available, container, i, id, len, monospaceWidth, name, ref1, tests, typefaceIsAvailable, typefaces;
   typefaces = {
     avenir: "AvenirNext-DemiBold",
     corbel: "Corbel"
@@ -4642,9 +4642,9 @@ $(document).ready(function() {
   container.innerHTML = tests.join("");
   document.body.appendChild(container);
   monospaceWidth = $("#monospace").width();
-  _ref1 = Object.keys(typefaces);
-  for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-    id = _ref1[_i];
+  ref1 = Object.keys(typefaces);
+  for (i = 0, len = ref1.length; i < len; i++) {
+    id = ref1[i];
     typefaceIsAvailable = $("#" + id).width() !== monospaceWidth;
     if (typefaceIsAvailable) {
       available.push(id);
@@ -4663,14 +4663,14 @@ $(document).ready(function() {
   }
 });
 
-MinipostRouter = (function(_super) {
+MinipostRouter = (function(superClass) {
   var IndexPageView, UnlockPostcardView, WritePostcardView;
 
-  __extends(MinipostRouter, _super);
+  extend(MinipostRouter, superClass);
 
   function MinipostRouter() {
-    this.online = __bind(this.online, this);
-    this.offline = __bind(this.offline, this);
+    this.online = bind(this.online, this);
+    this.offline = bind(this.offline, this);
     return MinipostRouter.__super__.constructor.apply(this, arguments);
   }
 
@@ -4702,28 +4702,28 @@ MinipostRouter = (function(_super) {
   };
 
   MinipostRouter.prototype.showIndex = function(params) {
-    var _ref1;
+    var ref1;
     console.info("Open Index", params);
-    if ((_ref1 = this.currentView) != null) {
-      _ref1.remove();
+    if ((ref1 = this.currentView) != null) {
+      ref1.remove();
     }
     return this.currentView = new IndexPageView(params);
   };
 
   MinipostRouter.prototype.writePostcard = function(params) {
-    var _ref1;
+    var ref1;
     console.info("Write Postcard", params);
-    if ((_ref1 = this.currentView) != null) {
-      _ref1.remove();
+    if ((ref1 = this.currentView) != null) {
+      ref1.remove();
     }
     return this.currentView = new WritePostcardView(params);
   };
 
   MinipostRouter.prototype.unlockPostcard = function(params) {
-    var _ref1;
+    var ref1;
     console.info("Unlock Postcard", params);
-    if ((_ref1 = this.currentView) != null) {
-      _ref1.remove();
+    if ((ref1 = this.currentView) != null) {
+      ref1.remove();
     }
     return this.currentView = new UnlockPostcardView(params);
   };
@@ -4736,16 +4736,16 @@ MinipostRouter = (function(_super) {
   };
 
   MinipostRouter.prototype.params = function(url) {
-    var name, pair, params, value, _i, _len, _ref1, _ref2;
+    var i, len, name, pair, params, ref1, ref2, value;
     if (url == null) {
       url = window.location;
     }
     params = {};
     if (url.search) {
-      _ref1 = url.search.replace("?", "").split("&");
-      for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-        pair = _ref1[_i];
-        _ref2 = pair.split("="), name = _ref2[0], value = _ref2[1];
+      ref1 = url.search.replace("?", "").split("&");
+      for (i = 0, len = ref1.length; i < len; i++) {
+        pair = ref1[i];
+        ref2 = pair.split("="), name = ref2[0], value = ref2[1];
         params[name] = decodeURIComponent(value);
       }
     }
@@ -4862,11 +4862,11 @@ Bobby.miniLockID = "PYN1P1uhHXTNT5MUccZYv1mhvPBFQX2cS7g9n3wcof8JU";
 
 },{"./views/index_page_view.coffee":8,"./views/unlock_postcard.coffee":12,"./views/write_postcard.coffee":13}],2:[function(require,module,exports){
 var Identity,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-Identity = (function(_super) {
-  __extends(Identity, _super);
+Identity = (function(superClass) {
+  extend(Identity, superClass);
 
   function Identity() {
     return Identity.__super__.constructor.apply(this, arguments);
@@ -4888,8 +4888,8 @@ Identity = (function(_super) {
   };
 
   Identity.prototype.secretKey = function() {
-    var _ref;
-    return (_ref = this.get("keys")) != null ? _ref.secretKey : void 0;
+    var ref;
+    return (ref = this.get("keys")) != null ? ref.secretKey : void 0;
   };
 
   Identity.prototype.miniLockID = function() {
@@ -4927,13 +4927,13 @@ Identity = (function(_super) {
 
 },{}],3:[function(require,module,exports){
 var Postcard,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-Postcard = (function(_super) {
+Postcard = (function(superClass) {
   var Identity;
 
-  __extends(Postcard, _super);
+  extend(Postcard, superClass);
 
   function Postcard() {
     return Postcard.__super__.constructor.apply(this, arguments);
@@ -4960,7 +4960,7 @@ Postcard = (function(_super) {
   };
 
   Postcard.prototype.validate = function(attributes) {
-    var error;
+    var error, error1;
     if (attributes.Base58 != null) {
       if (attributes.Base58.trim() === "") {
         return "Unacceptable Base58 input";
@@ -4970,8 +4970,8 @@ Postcard = (function(_super) {
       }
       try {
         miniLockLib.Base58.decode(attributes.Base58);
-      } catch (_error) {
-        error = _error;
+      } catch (error1) {
+        error = error1;
         return "Unacceptable Base58 input";
       }
     }
@@ -4987,8 +4987,8 @@ Postcard = (function(_super) {
   };
 
   Postcard.prototype.isLocked = function() {
-    var _ref, _ref1, _ref2;
-    return (((this.get("text") === (_ref2 = this.get("hue")) && _ref2 === (_ref1 = this.get("senderID"))) && _ref1 === (_ref = this.get("recipientID"))) && _ref === void 0);
+    var ref, ref1, ref2;
+    return (((this.get("text") === (ref2 = this.get("hue")) && ref2 === (ref1 = this.get("senderID"))) && ref1 === (ref = this.get("recipientID"))) && ref === void 0);
   };
 
   Postcard.prototype.lock = function() {
@@ -5014,13 +5014,13 @@ Postcard = (function(_super) {
   };
 
   Postcard.prototype.blockOfBase58Text = function() {
-    var block, char, lineLength, _i, _len, _ref;
+    var block, char, i, len, lineLength, ref;
     lineLength = 0;
     block = "";
     if (this.has("Base58")) {
-      _ref = this.get("Base58");
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        char = _ref[_i];
+      ref = this.get("Base58");
+      for (i = 0, len = ref.length; i < len; i++) {
+        char = ref[i];
         if (lineLength < 80) {
           block += char;
         } else {
@@ -5176,11 +5176,11 @@ Postcard = (function(_super) {
 
 },{"../models/identity.coffee":2}],4:[function(require,module,exports){
 var Shortcut,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-Shortcut = (function(_super) {
-  __extends(Shortcut, _super);
+Shortcut = (function(superClass) {
+  extend(Shortcut, superClass);
 
   function Shortcut() {
     return Shortcut.__super__.constructor.apply(this, arguments);
@@ -5191,14 +5191,14 @@ Shortcut = (function(_super) {
   Shortcut.prototype.initialize = function() {
     var number;
     return this.set("identifier", ((function() {
-      var _i, _len, _ref, _results;
-      _ref = miniLockLib.NaCl.randomBytes(4);
-      _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        number = _ref[_i];
-        _results.push(number.toString());
+      var i, len, ref, results;
+      ref = miniLockLib.NaCl.randomBytes(4);
+      results = [];
+      for (i = 0, len = ref.length; i < len; i++) {
+        number = ref[i];
+        results.push(number.toString());
       }
-      return _results;
+      return results;
     })()).join(""));
   };
 
@@ -5229,13 +5229,13 @@ exports.stamp = function(name, attributes) {
 exports.attributes = function(attributes) {
   var name, value;
   return ((function() {
-    var _results;
-    _results = [];
+    var results;
+    results = [];
     for (name in attributes) {
       value = attributes[name];
-      _results.push(name + "=" + '"' + value + '"');
+      results.push(name + "=" + '"' + value + '"');
     }
-    return _results;
+    return results;
   })()).join(" ");
 };
 
@@ -5245,7 +5245,7 @@ exports.a = function(text, attributes) {
   }
   if (attributes.href) {
     if (attributes.href[0] === "/") {
-      attributes.href = attributes.href.indexOf("?") !== -1 ? attributes.href.replace("?", "" + minipost.pageSuffix + "?") : attributes.href + minipost.pageSuffix;
+      attributes.href = attributes.href.indexOf("?") !== -1 ? attributes.href.replace("?", minipost.pageSuffix + "?") : attributes.href + minipost.pageSuffix;
     }
     attributes.href = encodeURI(attributes.href);
   }
@@ -5277,13 +5277,13 @@ exports.renderByteStream = function(typedArray) {
   var byte, bytes;
   if (typedArray) {
     bytes = (function() {
-      var _i, _len, _results;
-      _results = [];
-      for (_i = 0, _len = typedArray.length; _i < _len; _i++) {
-        byte = typedArray[_i];
-        _results.push('<b class="byte" style="background-color: hsla(0, 0%, 0%, ' + byte / 255 + ');"></b>');
+      var i, len, results;
+      results = [];
+      for (i = 0, len = typedArray.length; i < len; i++) {
+        byte = typedArray[i];
+        results.push('<b class="byte" style="background-color: hsla(0, 0%, 0%, ' + byte / 255 + ');"></b>');
       }
-      return _results;
+      return results;
     })();
     return '<div class="byte_stream">' + bytes.join("") + '</div>';
   } else {
@@ -5324,17 +5324,17 @@ module.exports["unlocked"] = "<svg width=\"80px\" height=\"100px\" viewBox=\"0 0
 
 },{}],7:[function(require,module,exports){
 var IdentityView,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-IdentityView = (function(_super) {
+IdentityView = (function(superClass) {
   var HTML, Identity;
 
-  __extends(IdentityView, _super);
+  extend(IdentityView, superClass);
 
   function IdentityView() {
-    this.render = __bind(this.render, this);
+    this.render = bind(this.render, this);
     return IdentityView.__super__.constructor.apply(this, arguments);
   }
 
@@ -5352,7 +5352,7 @@ IdentityView = (function(_super) {
   };
 
   IdentityView.prototype.render = function() {
-    var _ref, _ref1;
+    var ref, ref1;
     this.el.classList[this.identity.has("keys") ? "remove" : "add"]("undefined");
     return this.el.innerHTML = "<div class=\"miniLockID\">\n  <h2>" + HTML.miniLockIconHTML + " ID</h2>\n  " + (HTML.input({
       type: "text",
@@ -5360,7 +5360,7 @@ IdentityView = (function(_super) {
       value: this.identity.miniLockID(),
       tabindex: "-1",
       readonly: "yes"
-    })) + "\n</div>\n<div class=\"public key\">\n  <h2>Public Key</h2>\n  <div>" + (HTML.renderByteStream((_ref = this.identity.publicKey()) != null ? _ref : new Uint8Array(32))) + "</div>\n</div>\n<div class=\"secret key\">\n  <h2>Secret Key</h2>\n  <div>" + (HTML.renderByteStream((_ref1 = this.identity.secretKey()) != null ? _ref1 : new Uint8Array(32))) + "</div>\n</div>";
+    })) + "\n</div>\n<div class=\"public key\">\n  <h2>Public Key</h2>\n  <div>" + (HTML.renderByteStream((ref = this.identity.publicKey()) != null ? ref : new Uint8Array(32))) + "</div>\n</div>\n<div class=\"secret key\">\n  <h2>Secret Key</h2>\n  <div>" + (HTML.renderByteStream((ref1 = this.identity.secretKey()) != null ? ref1 : new Uint8Array(32))) + "</div>\n</div>";
   };
 
   return IdentityView;
@@ -5371,18 +5371,18 @@ IdentityView = (function(_super) {
 
 },{"../models/identity.coffee":2,"./HTML.coffee":5}],8:[function(require,module,exports){
 var IndexPageView,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-IndexPageView = (function(_super) {
+IndexPageView = (function(superClass) {
   var HTML;
 
-  __extends(IndexPageView, _super);
+  extend(IndexPageView, superClass);
 
   function IndexPageView() {
-    this.online = __bind(this.online, this);
-    this.offline = __bind(this.offline, this);
+    this.online = bind(this.online, this);
+    this.offline = bind(this.offline, this);
     return IndexPageView.__super__.constructor.apply(this, arguments);
   }
 
@@ -5445,8 +5445,8 @@ IndexPageView = (function(_super) {
     })) + "\n    <p>It’s only an example.<br>&amp; she probably won’t respond.</p>\n    <img alt=\"Writing a postcard for Alice.\" src=\"examples/Write a postcard to Alice.png\">\n  </div>\n  <div class=\"example\">\n    " + (HTML.a("Unlock a postcard addressed to Bobby", {
       href: "/unlock?address=bobby@example.org&amp;Base58=5diub1ZH8Tx8Yh1vq4yzMoAqSaeSKy9aBULxLSWBSjYKER5QMWgDTFn2QmFkWXqsPhZmzuGcxuzcQ9K42V3teB29azmRrhPqvTteKb4qnsZYy4D9BwJuhu8xP5ihTjgL2mCxSM3DaGbGccNE9csgEkJSL7vsgKFQteNb7C2Wcz2dGyvJSgBP5dD99sfjSfPVntKvTJvjLxoQo3PwPujLUPEhYgBQqaZ9oXAFpUrEjMjbMUvPtVPrpj17rHs15yhi7EDH4oVE7QqesqjpfLYtdcD8Ts6ajrj3hvGo25NMS9kTAqd97yGuqB9a6MVEnirRioZvpUkqghnvHLTpYVE7r2Gr5w5Dq5FWvwnztC77Tn3DMKwue6hXMHiJBRxYgzXs7Q6UrE9tTo6ap2kXmuZQD46E7HhNZ3rZJxuvmz3cbMof5UREDQgLsPnBxEsEcn4EUoJ6yxTTFjJbk5Kg7Wh5uMiq8ewddu9GLXzpmqBLoAAvjRMEQMsCX1uW3DkuoH8m8GFhtP1gprWje8pSKPaRCJoKqzP7RbRpc6HS2CZzbxTBcA3oM9dyCqCkyAMmPXhP4S9Cy3m5Ked6XDdqcCvpxuArCtVZM3x3W7a2X5ipnVNWoM5gQzaWL272BdzUziMfo8LYZ1iDQ2X3MmrJ9qdF5czCC35ccFRTkgY97aaMaXPJA3n2iXuqCiFtJxLrpo3ta6qsymkeSC6VPFP24Usjo2uiTgfbXufLoqoebt6YNAD7uhKJ66gXMSajgR6F1a7Q2oqdbS98XF2DGJxzP5PoQka6cuAtug599bm59jomAD5k8C8Z8MYX1PhMdu1NB3CKUvLTxGanAJCrQhruEYrE2BGKszSP5VKsDSFh2QjKeMpDPoDMBFVjgygAV3fVWsWRRDzCppE6TnES6LypMneWDphXKJmgTQTk7q8bL3yE9QC4WKrwbVZBKSgzSpmis1gYB4vS4Y9EDYbcrqKqZjLa4n9vZ1CL9c11jdWkMSJ2eSaTpc69u5V4LyhCqd5hhGpB3TxKg3HMFDNxyRjx9wn84f7Mepo99iGAAE5mzhsm8t6b7UFf7bMKKMSM7pnVErgbHy26WFNebB7hToBo88cvbWvDeWUeZMGinbg6NPfY1H2trhmBQ99Z9XeZkT64yWcivhWfUuZVTJqz5p1YyJro6zn5QmZMPHZwWBK3j1HScNs24E4Ew2DHZqfGT5TZpEia4QYw4mdk1LkA4mp4LgpGyme9uWjYpA2zxpXfXEim5XfGwou5cP9FKkLDx8CkHWzt7RGhuLeVv1Z34pStJ6iADn4BG4ZPFfjVgkfr9KCQeMXGNXSkpMQSYDSc5CnWEauyQekqmU6G9psGnypj3ugrHYC7qLK95DaPqKaeWxazuLZdfu6JjJUdSDWtx4FKQ4mRp4FofnfJGU87NMJVybfTR1f3qQ2MKNw2ADdceCWddJruPKkeTkYc8NipdeE9jX3xMLxck2XRfptpjEarPbjueQhiB4F69vg6oKGkV7JYQruYQrYmThBoR63e2X6wQ6JqisEb19j77gRopxFwPhmJ5b28gXqqBJMKTy3K9yf3hUH96uy9f6fqozZrz5K1B1wteM7BuAVGpND7b4JH7MFZPaasx3B8NJeAAYhy8tuhY5cUJHuWwGoA12RM4Pq34F3tQRxPigAmA28B56Xnx32zv9z3vmFcFbERq9Lgw5kkfqKfq6edNBddByYXLHZr8VNKBUi4Bab6tvzfE4ptBbZ4JyS6mwrHDfaEC8B3qMpaRT3vdPYcS8ZX1NKTH6NepcStMGsDqVXYVpuiAGnEJ3QiRHs8kyXtWvuy8Z3N4vcGfPeYNJ8FzmFtbj24SxWRMxp3Pa8S8CFAmbdT3o8Zki8PwYCRXAY4ZSiRz78eTSNQQevw6SFzoyCDGMvNyP1Nbq7V7MeAJzbqduUHkHzjJL5ZJUwtLvrJKvTjvedZi1RbqY2xvuvayNuzFYBuprZu6SkajrUYH31XY7brd58HHBAn4QB5zEc6tuUpPxRYK163aPwGU8GRuazhtapTNmwcZJtunBH5c9APxsVP7xgHh3z4Yf12LJVjbXfX4ZUoMfJVWCnQmhvG7JGwbtxm3xpJcHxncQhpe5UfmyxiWfyP8tHtfsZXedEUT9q8D6qRRNq2BtYygarMbSPEbJruyS4uquqZdT7yQFAKxWGQhTfY6jAYcWAUK3a9oReXNuKRSmmoRnwePZGe2hy6tBGVcmpHfg5WA88fu3RMxnzS8syKncb3wsL5k2MzDJas3sgQ9oaiFRg6vndq5Q9DhhHX52pSYE55oogf9BKo8SYeQj8MxZbm2BYYDkWX1aYE2zMCuG9YjSnox9MVFcKPrBK9Zmeq9zpKsuEy8xA6bqej2WBM5zqKcZSyU38bfizmGUrGV2ExQc4SQpuheLn4Q4K6kwNGgskgYdkufYjJKG5DUX6anKsrA3RCyZMHTpvSWbqpsnYFg3ark69zqnrGpY5xMafNhDgc6tLnwi2e1BnNzbbj3PcCjkZMwppLd5KYdznd1buqbrPmzXSkWi"
     })) + "\n    <p>His secret phrase is:<br><em class=\"copy_n_paste\">" + minipost.Bobby.secretPhrase + "</em></p>\n    <img alt=\"Unlocking Bobby’s postcard.\" src=\"examples/Unlock a postcard for Bobby.png\">\n  </div>\n  <div class=\"example\">\n    " + (HTML.a("Post a question to the author", {
-      href: "/write?mailto=undefined@minipost.link&amp;hue=300&amp;miniLockID=29FnzFiUxGd6z8bveWWXZFhcaU5zNCkUgdnrz72SoAcsPc&amp;text=Hello!\n\nI have a question about miniLock Postcard.\n\n"
-    })) + "\n    <p>The author of this site is <a tabindex=\"-1\" href=\"https://45678.github.io/\">undefined</a>.<br>Send them a message if you please.</p>\n    <img alt=\"Posting a question to the author.\" src=\"examples/Post a question.png\">\n  </div>\n</div>\n\n<div class=\"downloads\" style=\"" + (location.protocol === "chrome-extension:" ? "display:none;" : "") + "\">\n  <h2>Downloads</h2>\n  <div class=\"safari\">\n    Get miniLock Postcard for Apple Safari<br>\n    <p>\n      This extension adds a miniLock Postcard button to your toolbar for quick access to the write and unlock screens.\n      Works without a network connection.\n    </p>\n    <p>\n      <a href=\"https://github.com/minipostlink/minipost-safari/\">Review the source code for this extension</a>.\n    </p>\n    <p>\n      <em>Setup Instructions</em>:\n    </p>\n    <ol>\n      <li><a href=\"https://github.com/minipostlink/minipost-safari/raw/master/miniLock%20Postcard.safariextz\">Download <em>miniLock Postcard.safariextz</em></a> and save it on your computer.</li>\n      <li>Double-click the <em>miniLock Postcard.safariextz</em> file to open it with Safari.</li>\n      <li>Review the dialog that appears, and if you would like to proceed, click <em>Install</em>.\n      <li>\n        Click <img alt=\"the miniLock Postcard button\" src=\"downloads/Safari toolbar button.png\"> in the Safari toolbar to begin writing a postcard.\n        Click it again to unlock a postcard code or file.\n      </li>\n    </ol>\n    <img alt=\"miniLock Postcard button in Safari toolbar\" src=\"downloads/Safari + miniLock Postcard.png\">\n  </div>\n  <div class=\"chrome\">\n    Get miniLock Postcard for Google Chrome<br>\n    <p>\n      This app appears in your Chrome Apps folder and launcher after you install it.\n      Make and unlock postcards with ease; works without a network connection.\n    </p>\n    <p>\n      <a href=\"https://github.com/minipostlink/minipost-chrome/\">Review the source code for this app</a>.\n    </p>\n    <p>\n      <em>Setup Instructions</em>:\n    </p>\n    <ol>\n      <li><a href=\"https://github.com/minipostlink/minipost-chrome/raw/master/miniLock%20Postcard.crx\">Download <em>miniLock Postcard.crx</em></a> and save it to your computer.</li>\n      <li>Click the Chrome menu icon <img src=\"downloads/Chrome menu button.png\" alt=\"Chrome menu\" title=\"Chrome menu\"> on the browser toolbar.</li>\n      <li>Select <em>More Tools</em> &gt; <em>Extensions</em>.</li>\n      <li>Locate the <em>miniLock Postcard.crx</em> file on your computer and drag it onto the Extensions page.</li>\n      <li>Review the dialog that appears, and if you would like to proceed, click <em>Install</em>.\n    </ol>\n    <img alt=\"Google Chrome + miniLock Postcard\" src=\"downloads/Chrome + miniLock Postcard.png\">\n  </div>\n</div>\n\n<div class=\"hosts\">\n  <h2>Hosts</h2>\n  <div class=\"easy\">\n    <a tabindex=\"-1\" href=\"https://minipost.link\">minipost.link</a><br>\n    <p>\n      <a href=\"https://www.ssllabs.com/ssltest/analyze.html?d=minipost.link\">Easy TLS connection with strong forward secure ciphers</a>.<br>\n      <a tabindex=\"-1\" href=\"" + location.protocol + "//" + location.hostname + "/certificates/minipost.link.crt\">Get X.509 Certificate</a>.\n      <a tabindex=\"-1\" href=\"https://github.com/minipostlink/minipost/tree/deploy\">Review the source code</a>.<br>\n      Hosted by <a tabindex=\"-1\" href=\"https://45678.github.io/\">undefined</a> in Singapore.<br>\n    </p>\n  </div>\n  <div class=\"autonomous\">\n    <a tabindex=\"-1\" href=\"https://auto.minipost.link\">auto.minipost.link</a><br>\n    <p>\n      <a href=\"https://www.ssllabs.com/ssltest/analyze.html?d=auto.minipost.link\">Autonomous TLS connection with strong forward secure ciphers</a>.<br>\n      <a tabindex=\"-1\" href=\"" + location.protocol + "//" + location.hostname + "/certificates/auto.minipost.link.crt\">Get X.509 Certificate</a>.\n      <a tabindex=\"-1\" href=\"https://github.com/minipostlink/minipost/tree/deploy\">Review the source code</a>.<br>\n      Hosted by <a tabindex=\"-1\" href=\"https://45678.github.io/\">undefined</a> in New York City.<br>\n    </p>\n  </div>\n  <div class=\"github\">\n    <a tabindex=\"-1\" href=\"https://minipostlink.github.io\">minipostlink.github.io</a><br>\n    <p>\n      <a href=\"https://www.ssllabs.com/ssltest/analyze.html?d=minipostlink.github.io\">Easy TLS connection with good forward secure ciphers</a><br>\n      &amp; <a tabindex=\"-1\" href=\"https://github.com/minipostlink/minipostlink.github.io/tree/master\">an authentic view of the source code</a>.<br>\n      Hosted by <a tabindex=\"-1\" href=\"https://github.com/\">Github</a> somewhere in the USA.\n    </p>\n  </div>\n</div>";
+      href: "/write?mailto=undefined@indefinite.space&amp;hue=300&amp;miniLockID=crgXjhAFGdp76H4nvnojKA1Dj9dCowDEzoszXGx8BdEdP&amp;text=Hello!\n\nI have a question about miniLock Postcard.\n\n"
+    })) + "\n    <p>The author of this site is <a tabindex=\"-1\" href=\"https://45678.github.io/\">undefined</a>.<br>Send them a message if you please.</p>\n    <img alt=\"Posting a question to the author.\" src=\"examples/Post a question.png\">\n  </div>\n</div>\n\n<div class=\"downloads\" style=\"" + (location.protocol === "chrome-extension:" ? "display:none;" : "") + "\">\n  <h2>Downloads</h2>\n  <div class=\"safari\">\n    Get miniLock Postcard for Apple Safari<br>\n    <p>\n      This extension adds a miniLock Postcard button to your toolbar for quick access to the write and unlock screens.\n      Works without a network connection.\n    </p>\n    <p>\n      <a href=\"https://github.com/minipostlink/minipost-safari/\">Review the source code for this extension</a>.\n    </p>\n    <p>\n      <em>Setup Instructions</em>:\n    </p>\n    <ol>\n      <li><a href=\"https://github.com/minipostlink/minipost-safari/raw/master/miniLock%20Postcard.safariextz\">Download <em>miniLock Postcard.safariextz</em></a> and save it on your computer.</li>\n      <li>Double-click the <em>miniLock Postcard.safariextz</em> file to open it with Safari.</li>\n      <li>Review the dialog that appears, and if you would like to proceed, click <em>Install</em>.\n      <li>\n        Click <img alt=\"the miniLock Postcard button\" src=\"downloads/Safari toolbar button.png\"> in the Safari toolbar to begin writing a postcard.\n        Click it again to unlock a postcard code or file.\n      </li>\n    </ol>\n    <img alt=\"miniLock Postcard button in Safari toolbar\" src=\"downloads/Safari + miniLock Postcard.png\">\n  </div>\n  <div class=\"chrome\">\n    Get miniLock Postcard for Google Chrome<br>\n    <p>\n      This app appears in your Chrome Apps folder and launcher after you install it.\n      Make and unlock postcards with ease; works without a network connection.\n    </p>\n    <p>\n      <a href=\"https://github.com/minipostlink/minipost-chrome/\">Review the source code for this app</a>.\n    </p>\n    <p>\n      <em>Setup Instructions</em>:\n    </p>\n    <ol>\n      <li><a href=\"https://github.com/minipostlink/minipost-chrome/raw/master/miniLock%20Postcard.crx\">Download <em>miniLock Postcard.crx</em></a> and save it to your computer.</li>\n      <li>Click the Chrome menu icon <img src=\"downloads/Chrome menu button.png\" alt=\"Chrome menu\" title=\"Chrome menu\"> on the browser toolbar.</li>\n      <li>Select <em>More Tools</em> &gt; <em>Extensions</em>.</li>\n      <li>Locate the <em>miniLock Postcard.crx</em> file on your computer and drag it onto the Extensions page.</li>\n      <li>Review the dialog that appears, and if you would like to proceed, click <em>Install</em>.\n    </ol>\n    <img alt=\"Google Chrome + miniLock Postcard\" src=\"downloads/Chrome + miniLock Postcard.png\">\n  </div>\n</div>\n\n<div class=\"hosts\">\n  <h2>Hosts</h2>\n  <div class=\"easy\">\n    <a tabindex=\"-1\" href=\"https://minipost.site\">minipost.site</a><br>\n    <p>\n      <a href=\"https://www.ssllabs.com/ssltest/analyze.html?d=minipost.site\">Easy TLS connection with strong forward secure ciphers</a>.<br>\n      <a tabindex=\"-1\" href=\"" + location.protocol + "//" + location.hostname + "/certificates/minipost.site.crt\">Get X.509 Certificate</a>.\n      <a tabindex=\"-1\" href=\"https://github.com/minipostlink/minipost/tree/deploy\">Review the source code</a>.<br>\n      Hosted by <a tabindex=\"-1\" href=\"https://45678.github.io/\">undefined</a> in Toronto.<br>\n    </p>\n  </div>\n  <div class=\"easy\">\n    <a tabindex=\"-1\" href=\"https://minilockpostcard.site\">minilockpostcard.site</a><br>\n    <p>\n      <a href=\"https://www.ssllabs.com/ssltest/analyze.html?d=minilockpostcard.site\">Easy TLS connection with strong forward secure ciphers</a>.<br>\n      <a tabindex=\"-1\" href=\"" + location.protocol + "//" + location.hostname + "/certificates/minilockpostcard.site.crt\">Get X.509 Certificate</a>.\n      <a tabindex=\"-1\" href=\"https://github.com/minipostlink/minipost/tree/deploy\">Review the source code</a>.<br>\n      Hosted by <a tabindex=\"-1\" href=\"https://45678.github.io/\">undefined</a> in Toronto.<br>\n    </p>\n  </div>\n  <div class=\"github\">\n    <a tabindex=\"-1\" href=\"https://minipostlink.github.io\">minipostlink.github.io</a><br>\n    <p>\n      <a href=\"https://www.ssllabs.com/ssltest/analyze.html?d=minipostlink.github.io\">Easy TLS connection with good forward secure ciphers</a><br>\n      &amp; <a tabindex=\"-1\" href=\"https://github.com/minipostlink/minipostlink.github.io/tree/master\">an authentic view of the source code</a>.<br>\n      Hosted by <a tabindex=\"-1\" href=\"https://github.com/\">Github</a> at an unknown location.\n    </p>\n  </div>\n</div>\n\n<div class=\"retired hosts\">\n  <h2>Retired Hosts</h2>\n  <div class=\"easy\">\n    minipost.link<br>\n    <p>\n      Easy TLS connection with strong forward secure ciphers.<br>\n      <a tabindex=\"-1\" href=\"" + location.protocol + "//" + location.hostname + "/certificates/minipost.link.crt\">Get X.509 Certificate</a>.\n      <a tabindex=\"-1\" href=\"https://github.com/minipostlink/minipost/tree/deploy\">Review the source code</a>.<br>\n      Hosted by <a tabindex=\"-1\" href=\"https://45678.github.io/\">undefined</a> in Singapore.<br>\n    </p>\n  </div>\n  <div class=\"autonomous\">\n    auto.minipost.link<br>\n    <p>\n      Autonomous TLS connection with strong forward secure ciphers.<br>\n      <a tabindex=\"-1\" href=\"" + location.protocol + "//" + location.hostname + "/certificates/auto.minipost.link.crt\">Get X.509 Certificate</a>.\n      <a tabindex=\"-1\" href=\"https://github.com/minipostlink/minipost/tree/deploy\">Review the source code</a>.<br>\n      Hosted by <a tabindex=\"-1\" href=\"https://45678.github.io/\">undefined</a> in New York City.<br>\n    </p>\n  </div>\n</div>";
   };
 
   return IndexPageView;
@@ -5457,19 +5457,19 @@ IndexPageView = (function(_super) {
 
 },{"./HTML.coffee":5}],9:[function(require,module,exports){
 var MakeKeysView,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-MakeKeysView = (function(_super) {
+MakeKeysView = (function(superClass) {
   var HTML, Identity, char;
 
-  __extends(MakeKeysView, _super);
+  extend(MakeKeysView, superClass);
 
   function MakeKeysView() {
-    this.render = __bind(this.render, this);
-    this.errorMakingKeyPair = __bind(this.errorMakingKeyPair, this);
-    this.keyPairIsReady = __bind(this.keyPairIsReady, this);
+    this.render = bind(this.render, this);
+    this.errorMakingKeyPair = bind(this.errorMakingKeyPair, this);
+    this.keyPairIsReady = bind(this.keyPairIsReady, this);
     return MakeKeysView.__super__.constructor.apply(this, arguments);
   }
 
@@ -5508,12 +5508,12 @@ MakeKeysView = (function(_super) {
   };
 
   MakeKeysView.prototype.secretPhraseMask = ((function() {
-    var _i, _results;
-    _results = [];
-    for (char = _i = 0; _i < 92; char = ++_i) {
-      _results.push("•");
+    var i, results;
+    results = [];
+    for (char = i = 0; i < 92; char = ++i) {
+      results.push("•");
     }
-    return _results;
+    return results;
   })()).join("");
 
   MakeKeysView.prototype.setSecretPhrase = function(event) {
@@ -5580,17 +5580,17 @@ MakeKeysView = (function(_super) {
 
 },{"../models/identity.coffee":2,"./HTML.coffee":5}],10:[function(require,module,exports){
 var OutputView,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-OutputView = (function(_super) {
+OutputView = (function(superClass) {
   var HTML, Shortcut;
 
-  __extends(OutputView, _super);
+  extend(OutputView, superClass);
 
   function OutputView() {
-    this.render = __bind(this.render, this);
+    this.render = bind(this.render, this);
     return OutputView.__super__.constructor.apply(this, arguments);
   }
 
@@ -5655,7 +5655,7 @@ OutputView = (function(_super) {
           var linkToSaveFile;
           linkToSaveFile = _this.el.querySelector("div.file a");
           linkToSaveFile.href = reader.result;
-          linkToSaveFile.download = "" + basename + ".minilock";
+          linkToSaveFile.download = basename + ".minilock";
           linkToSaveFile.click();
           return event.target.classList.remove("activated");
         };
@@ -5765,17 +5765,17 @@ OutputView = (function(_super) {
 
 },{"../models/shortcut.coffee":4,"./HTML.coffee":5}],11:[function(require,module,exports){
 var PostieView,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-PostieView = (function(_super) {
+PostieView = (function(superClass) {
   var HTML, Identity;
 
-  __extends(PostieView, _super);
+  extend(PostieView, superClass);
 
   function PostieView() {
-    this.render = __bind(this.render, this);
+    this.render = bind(this.render, this);
     return PostieView.__super__.constructor.apply(this, arguments);
   }
 
@@ -5831,17 +5831,17 @@ PostieView = (function(_super) {
 
 },{"../models/identity.coffee":2,"./HTML.coffee":5}],12:[function(require,module,exports){
 var UnlockPostcardView,
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-UnlockPostcardView = (function(_super) {
+UnlockPostcardView = (function(superClass) {
   var HTML, Identity, IdentityView, MakeKeysView, OutputsView, Postcard;
 
-  __extends(UnlockPostcardView, _super);
+  extend(UnlockPostcardView, superClass);
 
   function UnlockPostcardView() {
-    this.render = __bind(this.render, this);
+    this.render = bind(this.render, this);
     return UnlockPostcardView.__super__.constructor.apply(this, arguments);
   }
 
@@ -5888,8 +5888,8 @@ UnlockPostcardView = (function(_super) {
     this.el.focus();
     return Function.delay(666, (function(_this) {
       return function() {
-        var _ref;
-        return (_ref = _this.el.querySelector("[name=Base58].undefined,[name=email_address].undefined,[name=secret_phrase].undefined")) != null ? _ref.focus() : void 0;
+        var ref;
+        return (ref = _this.el.querySelector("[name=Base58].undefined,[name=email_address].undefined,[name=secret_phrase].undefined")) != null ? ref.focus() : void 0;
       };
     })(this));
   };
@@ -6040,7 +6040,7 @@ UnlockPostcardView = (function(_super) {
   };
 
   UnlockPostcardView.prototype.renderHTML = function() {
-    var _ref;
+    var ref;
     return this.el.innerHTML = "<article class=\"postcard " + (this.postcard.isLocked() ? 'locked' : 'unlocked') + "\">\n  <b class=\"line\"></b>\n  <a class=\"stamp\"></a>\n  " + (HTML.stamp("undefined", {
       alt: "Undefined Postcard"
     })) + "\n  " + (HTML.stamp("locked", {
@@ -6071,7 +6071,7 @@ UnlockPostcardView = (function(_super) {
       name: "miniLockID",
       tabindex: "-1",
       readonly: "yes"
-    })) + "\n      </div>\n      <div class=\"public key\">\n        <h2>Public Key</h2>\n        <div>" + (HTML.renderByteStream((_ref = this.identity.publicKey()) != null ? _ref : new Uint8Array(32))) + "</div>\n      </div>\n    </div>\n    <br>\n    <button class=\"unlock\">Unlock Postcard</button><button class=\"lock\">Lock Postcard</button>\n  <div>\n</article>\n<div class=\"outputs_view\"></div>\n<nav style=\"display:" + (location.protocol === "safari-extension:" ? "none" : "block") + ";\">\n  <h3>Site Map</h3>\n  <a tabindex=\"-1\" " + (location.pathname !== "/" ? 'href="/"' : void 0) + ">" + minipost.hostname + "</a><br>\n  <a tabindex=\"-1\" " + (location.pathname !== ("/write" + minipost.pageSuffix) ? 'href="' + ("/write" + minipost.pageSuffix) + '"' : void 0) + ">" + minipost.hostname + "/write</a><br>\n  <a tabindex=\"-1\" " + (location.pathname !== ("/unlock" + minipost.pageSuffix) ? 'href="' + ("/unlock" + minipost.pageSuffix) + '"' : void 0) + ">" + minipost.hostname + "/unlock</a><br>\n</nav>";
+    })) + "\n      </div>\n      <div class=\"public key\">\n        <h2>Public Key</h2>\n        <div>" + (HTML.renderByteStream((ref = this.identity.publicKey()) != null ? ref : new Uint8Array(32))) + "</div>\n      </div>\n    </div>\n    <br>\n    <button class=\"unlock\">Unlock Postcard</button><button class=\"lock\">Lock Postcard</button>\n  <div>\n</article>\n<div class=\"outputs_view\"></div>\n<nav style=\"display:" + (location.protocol === "safari-extension:" ? "none" : "block") + ";\">\n  <h3>Site Map</h3>\n  <a tabindex=\"-1\" " + (location.pathname !== "/" ? 'href="/"' : void 0) + ">" + minipost.hostname + "</a><br>\n  <a tabindex=\"-1\" " + (location.pathname !== ("/write" + minipost.pageSuffix) ? 'href="' + ("/write" + minipost.pageSuffix) + '"' : void 0) + ">" + minipost.hostname + "/write</a><br>\n  <a tabindex=\"-1\" " + (location.pathname !== ("/unlock" + minipost.pageSuffix) ? 'href="' + ("/unlock" + minipost.pageSuffix) + '"' : void 0) + ">" + minipost.hostname + "/unlock</a><br>\n</nav>";
   };
 
   return UnlockPostcardView;
@@ -6082,13 +6082,13 @@ UnlockPostcardView = (function(_super) {
 
 },{"../models/identity.coffee":2,"../models/postcard.coffee":3,"./HTML.coffee":5,"./identity_view.coffee":7,"./make_keys_view.coffee":9,"./outputs_view.coffee":10}],13:[function(require,module,exports){
 var WritePostcardView,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
-WritePostcardView = (function(_super) {
+WritePostcardView = (function(superClass) {
   var HTML, Identity, IdentityView, MakeKeysView, OutputsView, Postcard, PostieView;
 
-  __extends(WritePostcardView, _super);
+  extend(WritePostcardView, superClass);
 
   function WritePostcardView() {
     return WritePostcardView.__super__.constructor.apply(this, arguments);
@@ -6115,9 +6115,9 @@ WritePostcardView = (function(_super) {
   };
 
   WritePostcardView.prototype.initialize = function(params) {
-    var _ref;
+    var ref;
     this.postcard = window.postcard = new Postcard;
-    this.identity = window.identity = (_ref = minipost.identity) != null ? _ref : new Identity;
+    this.identity = window.identity = (ref = minipost.identity) != null ? ref : new Identity;
     this.postcard.set({
       "text": params.text,
       "hue": params.hue || Math.round(Math.random() * (360 - 120)) + 60,
@@ -6174,8 +6174,8 @@ WritePostcardView = (function(_super) {
     } else {
       return Function.delay(666, (function(_this) {
         return function() {
-          var _ref1;
-          return (_ref1 = _this.el.querySelector("textarea.undefined,input.undefined")) != null ? _ref1.focus() : void 0;
+          var ref1;
+          return (ref1 = _this.el.querySelector("textarea.undefined,input.undefined")) != null ? ref1.focus() : void 0;
         };
       })(this));
     }

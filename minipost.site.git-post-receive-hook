@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Processing post receive hook for spaces/minipost.site.git"
+unset GIT_INDEX_FILE
+git --git-dir=/home/core/spaces/minipost.site.git --work-tree=/home/core/spaces/minipost.site reset --hard deploy

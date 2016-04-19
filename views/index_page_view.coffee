@@ -61,7 +61,7 @@ class IndexPageView extends Backbone.View
           <img alt="Unlocking Bobby’s postcard." src="examples/Unlock a postcard for Bobby.png">
         </div>
         <div class="example">
-          #{HTML.a "Post a question to the author", href: "/write?mailto=undefined@minipost.link&amp;hue=300&amp;miniLockID=29FnzFiUxGd6z8bveWWXZFhcaU5zNCkUgdnrz72SoAcsPc&amp;text=Hello!\n\nI have a question about miniLock Postcard.\n\n" }
+          #{HTML.a "Post a question to the author", href: "/write?mailto=undefined@indefinite.space&amp;hue=300&amp;miniLockID=crgXjhAFGdp76H4nvnojKA1Dj9dCowDEzoszXGx8BdEdP&amp;text=Hello!\n\nI have a question about miniLock Postcard.\n\n" }
           <p>The author of this site is <a tabindex="-1" href="https://45678.github.io/">undefined</a>.<br>Send them a message if you please.</p>
           <img alt="Posting a question to the author." src="examples/Post a question.png">
         </div>
@@ -118,21 +118,21 @@ class IndexPageView extends Backbone.View
       <div class="hosts">
         <h2>Hosts</h2>
         <div class="easy">
-          <a tabindex="-1" href="https://minipost.link">minipost.link</a><br>
+          <a tabindex="-1" href="https://minipost.site">minipost.site</a><br>
           <p>
-            <a href="https://www.ssllabs.com/ssltest/analyze.html?d=minipost.link">Easy TLS connection with strong forward secure ciphers</a>.<br>
-            <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/minipost.link.crt">Get X.509 Certificate</a>.
+            <a href="https://www.ssllabs.com/ssltest/analyze.html?d=minipost.site">Easy TLS connection with strong forward secure ciphers</a>.<br>
+            <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/minipost.site.crt">Get X.509 Certificate</a>.
             <a tabindex="-1" href="https://github.com/minipostlink/minipost/tree/deploy">Review the source code</a>.<br>
-            Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in Singapore.<br>
+            Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in Toronto.<br>
           </p>
         </div>
-        <div class="autonomous">
-          <a tabindex="-1" href="https://auto.minipost.link">auto.minipost.link</a><br>
+        <div class="easy">
+          <a tabindex="-1" href="https://minilockpostcard.site">minilockpostcard.site</a><br>
           <p>
-            <a href="https://www.ssllabs.com/ssltest/analyze.html?d=auto.minipost.link">Autonomous TLS connection with strong forward secure ciphers</a>.<br>
-            <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/auto.minipost.link.crt">Get X.509 Certificate</a>.
+            <a href="https://www.ssllabs.com/ssltest/analyze.html?d=minilockpostcard.site">Easy TLS connection with strong forward secure ciphers</a>.<br>
+            <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/minilockpostcard.site.crt">Get X.509 Certificate</a>.
             <a tabindex="-1" href="https://github.com/minipostlink/minipost/tree/deploy">Review the source code</a>.<br>
-            Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in New York City.<br>
+            Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in Toronto.<br>
           </p>
         </div>
         <div class="github">
@@ -140,7 +140,29 @@ class IndexPageView extends Backbone.View
           <p>
             <a href="https://www.ssllabs.com/ssltest/analyze.html?d=minipostlink.github.io">Easy TLS connection with good forward secure ciphers</a><br>
             &amp; <a tabindex="-1" href="https://github.com/minipostlink/minipostlink.github.io/tree/master">an authentic view of the source code</a>.<br>
-            Hosted by <a tabindex="-1" href="https://github.com/">Github</a> somewhere in the USA.
+            Hosted by <a tabindex="-1" href="https://github.com/">Github</a> at an unknown location.
+          </p>
+        </div>
+      </div>
+
+      <div class="retired hosts">
+        <h2>Retired Hosts</h2>
+        <div class="easy">
+          minipost.link<br>
+          <p>
+            Easy TLS connection with strong forward secure ciphers.<br>
+            <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/minipost.link.crt">Get X.509 Certificate</a>.
+            <a tabindex="-1" href="https://github.com/minipostlink/minipost/tree/deploy">Review the source code</a>.<br>
+            Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in Singapore.<br>
+          </p>
+        </div>
+        <div class="autonomous">
+          auto.minipost.link<br>
+          <p>
+            Autonomous TLS connection with strong forward secure ciphers.<br>
+            <a tabindex="-1" href="#{location.protocol}//#{location.hostname}/certificates/auto.minipost.link.crt">Get X.509 Certificate</a>.
+            <a tabindex="-1" href="https://github.com/minipostlink/minipost/tree/deploy">Review the source code</a>.<br>
+            Hosted by <a tabindex="-1" href="https://45678.github.io/">undefined</a> in New York City.<br>
           </p>
         </div>
       </div>

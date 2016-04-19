@@ -55,6 +55,8 @@ body.offline div.downloads img {
 body.offline a[href^="http"],
 body.offline div.downloads,
 body.offline div.hosts,
+#index_page_view .retired.hosts,
+#index_page_view .retired.hosts h2,
 .undefined.identity,
 .undefined.identity .key h2,
 .undefined.postie .key h2,
