@@ -110,7 +110,6 @@ deploy:
 	git add --all
 	git commit --message "Comitted after merge with 'make deploy'"
 	git checkout master
-	make index.html
 
 nodes:
 	make minilockpostcard.github.io
